@@ -647,6 +647,114 @@ body::before {
 }
 .stay-divider { width: 100%; height: 1px; background: rgba(190,175,155,0.2); margin: 2px 0; }
 
+/* FOOD TAB */
+.food-location-header {
+  display: flex; align-items: center; gap: 10px;
+  margin: 22px 0 14px;
+}
+.food-location-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.62);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(200,185,168,0.40);
+  border-radius: 30px; padding: 8px 18px;
+  font-size: 14px; font-weight: 700; color: #3A2E24;
+  box-shadow: 0 3px 12px rgba(120,100,80,0.08);
+}
+.food-location-line {
+  flex: 1; height: 1px; background: rgba(190,175,155,0.28);
+}
+.food-category-label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1px; color: #9A8878;
+  margin: 16px 0 10px; display: flex; align-items: center; gap: 8px;
+}
+.food-category-label::after {
+  content: ''; flex: 1; height: 1px; background: rgba(190,175,155,0.25);
+}
+.food-card {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(200,185,168,0.36);
+  border-radius: 18px; padding: 16px 18px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 18px rgba(120,100,80,0.07);
+  transition: all 0.25s ease;
+}
+.food-card:hover {
+  background: rgba(255,255,255,0.72);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(120,100,80,0.11);
+}
+.food-card-top {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 10px; margin-bottom: 6px;
+}
+.food-name {
+  font-size: 14px; font-weight: 700; color: #3A2E24; line-height: 1.3;
+}
+.food-badges { display: flex; gap: 5px; flex-wrap: wrap; flex-shrink: 0; }
+.food-badge {
+  font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 10px;
+  letter-spacing: 0.2px;
+}
+.badge-vegan { background: rgba(160,200,170,0.28); color: #4A7A58; border: 1px solid rgba(140,180,150,0.3); }
+.badge-veg   { background: rgba(180,210,160,0.25); color: #5A7848; border: 1px solid rgba(160,190,140,0.28); }
+.badge-close { background: rgba(200,185,160,0.28); color: #7A6040; border: 1px solid rgba(190,175,148,0.3); }
+.food-desc {
+  font-size: 12px; color: #7A6A58; line-height: 1.55;
+  font-weight: 400; margin-bottom: 10px;
+}
+.food-note {
+  font-size: 11px; color: #9A8878; font-weight: 600;
+  margin-bottom: 10px; display: flex; align-items: center; gap: 5px;
+}
+.food-map-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: 12px;
+  background: linear-gradient(135deg, #8B6F47, #A07850);
+  color: #FAF8F4; font-size: 12px; font-weight: 700;
+  text-decoration: none; letter-spacing: 0.1px;
+  box-shadow: 0 3px 12px rgba(139,111,71,0.22);
+  transition: all 0.22s ease;
+}
+.food-map-btn:hover {
+  background: linear-gradient(135deg, #7A5C38, #8B6F47);
+  box-shadow: 0 5px 16px rgba(139,111,71,0.32);
+  transform: translateY(-1px);
+}
+.store-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px;
+}
+.store-item {
+  background: rgba(255,255,255,0.52);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(200,185,168,0.32);
+  border-radius: 14px; padding: 12px 14px;
+  box-shadow: 0 2px 10px rgba(120,100,80,0.06);
+  transition: all 0.22s ease;
+  text-decoration: none; display: flex; flex-direction: column; gap: 4px;
+}
+.store-item:hover {
+  background: rgba(255,255,255,0.72);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(120,100,80,0.10);
+}
+.store-icon-name { display: flex; align-items: center; gap: 7px; }
+.store-emoji { font-size: 18px; }
+.store-name { font-size: 12.5px; font-weight: 700; color: #3A2E24; }
+.store-type { font-size: 10.5px; color: #9A8878; font-weight: 500; }
+.store-note { font-size: 10.5px; color: #8A7A68; font-weight: 500; margin-top: 2px; }
+.store-map-link {
+  font-size: 10.5px; font-weight: 700; color: #8B6F47;
+  display: inline-flex; align-items: center; gap: 4px; margin-top: 4px;
+  text-decoration: none;
+}
+.store-map-link:hover { color: #7A5C38; }
+
 /* RESPONSIVE */
 @media (max-width: 400px) {
   .header .trip-title { font-size: 28px; }
@@ -694,6 +802,7 @@ body::before {
   <button class="nav-tab" onclick="showTab('packing')">🧳 Packing</button>
   <button class="nav-tab" onclick="showTab('budget')">💰 Budget</button>
   <button class="nav-tab" onclick="showTab('stays')">🏠 Stays</button>
+  <button class="nav-tab" onclick="showTab('food')">🍽️ Food</button>
   <button class="nav-tab" onclick="showTab('tips')">💡 Tips</button>
 </div>
 
@@ -1637,6 +1746,253 @@ body::before {
         <div class="stay-nights-badge">🌙 3 nights &nbsp;·&nbsp; ≈ ₹12,296</div>
       </div>
     </div>
+  </div>
+
+</div>
+
+<!-- ======== FOOD TAB ======== -->
+<div id="tab-food" class="tab-pane">
+
+  <!-- ── KUALA LUMPUR ── -->
+  <div class="food-location-header">
+    <div class="food-location-pill">🏙️ Kuala Lumpur</div>
+    <div class="food-location-line"></div>
+  </div>
+
+  <div class="food-category-label">🌱 Vegetarian &amp; Vegan Restaurants</div>
+
+  <div class="food-card">
+    <div class="food-card-top">
+      <div class="food-name">Annalakshmi Restaurant</div>
+      <div class="food-badges"><span class="food-badge badge-vegan">🌿 Vegan-friendly</span><span class="food-badge badge-veg">🥗 Pure Veg</span></div>
+    </div>
+    <div class="food-desc">Legendary Indian vegetarian restaurant in Brickfields — pay-what-you-wish concept. Wholesome thali, curries, and rice. A cultural gem steps from KL Sentral.</div>
+    <div class="food-note">📍 Temple of Fine Arts, Brickfields — ~5 min walk from The Colony Infinitum</div>
+    <a class="food-map-btn" href="https://www.google.com/maps/search/Annalakshmi+Restaurant+Brickfields+Kuala+Lumpur" target="_blank">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Open in Google Maps
+    </a>
+  </div>
+
+  <div class="food-card">
+    <div class="food-card-top">
+      <div class="food-name">Simple Life Healthy Restaurant</div>
+      <div class="food-badges"><span class="food-badge badge-veg">🥗 Pure Veg</span></div>
+    </div>
+    <div class="food-desc">Popular Chinese vegetarian chain with multiple KL outlets. Clean, affordable dim sum, noodles, and rice dishes. Great for a quick healthy meal near KLCC.</div>
+    <div class="food-note">📍 Suria KLCC & Mid Valley — near KLCC hotel area</div>
+    <a class="food-map-btn" href="https://www.google.com/maps/search/Simple+Life+Healthy+Restaurant+KLCC+Kuala+Lumpur" target="_blank">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Open in Google Maps
+    </a>
+  </div>
+
+  <div class="food-card">
+    <div class="food-card-top">
+      <div class="food-name">Loving Hut</div>
+      <div class="food-badges"><span class="food-badge badge-vegan">🌿 100% Vegan</span></div>
+    </div>
+    <div class="food-desc">Fully vegan international chain with multiple KL locations. Asian-Western fusion, mock meats, fresh juices. Budget-friendly and reliable.</div>
+    <div class="food-note">📍 Multiple outlets across KL — search nearest branch</div>
+    <a class="food-map-btn" href="https://www.google.com/maps/search/Loving+Hut+Vegan+Restaurant+Kuala+Lumpur" target="_blank">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Open in Google Maps
+    </a>
+  </div>
+
+  <div class="food-card">
+    <div class="food-card-top">
+      <div class="food-name">Fong Lye Taiwanese Vegetarian Restaurant</div>
+      <div class="food-badges"><span class="food-badge badge-veg">🥗 Pure Veg</span></div>
+    </div>
+    <div class="food-desc">Elegant Taiwanese vegetarian with beautifully presented dishes. Known for mushroom broth noodles, tofu, and cold desserts. A step up in ambience.</div>
+    <div class="food-note">📍 The Gardens Mall, Mid Valley City</div>
+    <a class="food-map-btn" href="https://www.google.com/maps/search/Fong+Lye+Taiwanese+Vegetarian+Restaurant+Mid+Valley+Kuala+Lumpur" target="_blank">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Open in Google Maps
+    </a>
+  </div>
+
+  <div class="food-card">
+    <div class="food-card-top">
+      <div class="food-name">Sri Nirwana Maju</div>
+      <div class="food-badges"><span class="food-badge badge-veg">🥗 Veg Options</span></div>
+    </div>
+    <div class="food-desc">Iconic South Indian banana leaf rice restaurant. Order the vegetarian thali — unlimited refills of dal, sambar, and curries on a fresh banana leaf. Unmissable.</div>
+    <div class="food-note">📍 Bangsar — 10 min Grab from KL Sentral</div>
+    <a class="food-map-btn" href="https://www.google.com/maps/search/Sri+Nirwana+Maju+Bangsar+Kuala+Lumpur" target="_blank">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Open in Google Maps
+    </a>
+  </div>
+
+  <div class="food-card">
+    <div class="food-card-top">
+      <div class="food-name">Vegefor Restaurant</div>
+      <div class="food-badges"><span class="food-badge badge-vegan">🌿 Vegan-friendly</span><span class="food-badge badge-veg">🥗 Pure Veg</span></div>
+    </div>
+    <div class="food-desc">Cosy Chinese-style vegetarian café near Masjid India. Great lunch specials, tofu dishes, and mixed rice. Local favourite at wallet-friendly prices.</div>
+    <div class="food-note">📍 Chow Kit / Masjid India area, KL</div>
+    <a class="food-map-btn" href="https://www.google.com/maps/search/Vegefor+Restaurant+Kuala+Lumpur" target="_blank">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Open in Google Maps
+    </a>
+  </div>
+
+  <div class="food-category-label">🏪 Convenience Stores &amp; Supermarkets</div>
+
+  <div class="store-grid">
+    <a class="store-item" href="https://www.google.com/maps/search/Jaya+Grocer+KLCC+Kuala+Lumpur" target="_blank">
+      <div class="store-icon-name"><span class="store-emoji">🛒</span><span class="store-name">Jaya Grocer</span></div>
+      <div class="store-type">Premium Supermarket</div>
+      <div class="store-note">KLCC — great organic & imported section</div>
+      <div class="store-map-link"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> View on Maps</div>
+    </a>
+    <a class="store-item" href="https://www.google.com/maps/search/Village+Grocer+Bangsar+Kuala+Lumpur" target="_blank">
+      <div class="store-icon-name"><span class="store-emoji">🛒</span><span class="store-name">Village Grocer</span></div>
+      <div class="store-type">Premium Supermarket</div>
+      <div class="store-note">Bangsar — fresh produce &amp; deli</div>
+      <div class="store-map-link"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> View on Maps</div>
+    </a>
+    <a class="store-item" href="https://www.google.com/maps/search/Cold+Storage+KLCC+Kuala+Lumpur" target="_blank">
+      <div class="store-icon-name"><span class="store-emoji">❄️</span><span class="store-name">Cold Storage</span></div>
+      <div class="store-type">Supermarket</div>
+      <div class="store-note">KLCC & Pavilion — imported goods</div>
+      <div class="store-map-link"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> View on Maps</div>
+    </a>
+    <a class="store-item" href="https://www.google.com/maps/search/7-Eleven+KL+Sentral+Kuala+Lumpur" target="_blank">
+      <div class="store-icon-name"><span class="store-emoji">🏪</span><span class="store-name">7-Eleven</span></div>
+      <div class="store-type">Convenience Store · 24hr</div>
+      <div class="store-note">KL Sentral — closest to The Colony</div>
+      <div class="store-map-link"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> View on Maps</div>
+    </a>
+    <a class="store-item" href="https://www.google.com/maps/search/Lotus+Supermarket+Bukit+Bintang+Kuala+Lumpur" target="_blank">
+      <div class="store-icon-name"><span class="store-emoji">🏬</span><span class="store-name">Lotus's</span></div>
+      <div class="store-type">Hypermarket</div>
+      <div class="store-note">Bukit Bintang — large, affordable</div>
+      <div class="store-map-link"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> View on Maps</div>
+    </a>
+    <a class="store-item" href="https://www.google.com/maps/search/Aeon+Supermarket+Mid+Valley+Kuala+Lumpur" target="_blank">
+      <div class="store-icon-name"><span class="store-emoji">🏬</span><span class="store-name">AEON</span></div>
+      <div class="store-type">Supermarket</div>
+      <div class="store-note">Mid Valley — great value &amp; variety</div>
+      <div class="store-map-link"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> View on Maps</div>
+    </a>
+  </div>
+
+
+  <!-- ── LANGKAWI ── -->
+  <div class="food-location-header">
+    <div class="food-location-pill">🌴 Langkawi</div>
+    <div class="food-location-line"></div>
+  </div>
+
+  <div class="food-category-label">🌱 Vegetarian &amp; Vegan Restaurants</div>
+
+  <div class="food-card">
+    <div class="food-card-top">
+      <div class="food-name">Wonderland Food Store &amp; Café</div>
+      <div class="food-badges"><span class="food-badge badge-vegan">🌿 Vegan-friendly</span></div>
+    </div>
+    <div class="food-desc">Laid-back health café on Pantai Cenang strip. Smoothie bowls, vegan wraps, cold-pressed juices, and raw desserts. Perfect for a light breakfast or afternoon snack.</div>
+    <div class="food-note">📍 Pantai Cenang — 5 min walk from their beach</div>
+    <a class="food-map-btn" href="https://www.google.com/maps/search/Wonderland+Food+Store+Pantai+Cenang+Langkawi" target="_blank">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Open in Google Maps
+    </a>
+  </div>
+
+  <div class="food-card">
+    <div class="food-card-top">
+      <div class="food-name">Babylon Garden Restaurant</div>
+      <div class="food-badges"><span class="food-badge badge-veg">🥗 Veg Options</span><span class="food-badge badge-close">📍 Closest</span></div>
+    </div>
+    <div class="food-desc">Charming open-air garden restaurant on Pantai Tengah — right near your Airbnb. Eclectic menu with solid vegetarian dishes, fresh salads, and tropical fruit shakes.</div>
+    <div class="food-note">📍 Pantai Tengah — walking distance from your stay</div>
+    <a class="food-map-btn" href="https://www.google.com/maps/search/Babylon+Garden+Restaurant+Pantai+Tengah+Langkawi" target="_blank">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Open in Google Maps
+    </a>
+  </div>
+
+  <div class="food-card">
+    <div class="food-card-top">
+      <div class="food-name">Red Tomato Restaurant</div>
+      <div class="food-badges"><span class="food-badge badge-veg">🥗 Veg Options</span></div>
+    </div>
+    <div class="food-desc">Well-reviewed restaurant on Pantai Cenang with a dedicated vegetarian section. Serves Indian, Western, and local dishes. Good laksa and nasi lemak with veg options.</div>
+    <div class="food-note">📍 Pantai Cenang main strip, Langkawi</div>
+    <a class="food-map-btn" href="https://www.google.com/maps/search/Red+Tomato+Restaurant+Pantai+Cenang+Langkawi" target="_blank">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Open in Google Maps
+    </a>
+  </div>
+
+  <div class="food-card">
+    <div class="food-card-top">
+      <div class="food-name">The Cliff Restaurant</div>
+      <div class="food-badges"><span class="food-badge badge-veg">🥗 Veg Options</span></div>
+    </div>
+    <div class="food-desc">Stunning clifftop setting overlooking the sea. Upscale international menu with good vegetarian pasta, pizza, and salad options. Ideal for a romantic dinner with a view.</div>
+    <div class="food-note">📍 Pantai Cenang, near Sky Trex — short Grab ride</div>
+    <a class="food-map-btn" href="https://www.google.com/maps/search/The+Cliff+Restaurant+Pantai+Cenang+Langkawi" target="_blank">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Open in Google Maps
+    </a>
+  </div>
+
+  <div class="food-card">
+    <div class="food-card-top">
+      <div class="food-name">Yellow Café</div>
+      <div class="food-badges"><span class="food-badge badge-veg">🥗 Veg Options</span></div>
+    </div>
+    <div class="food-desc">Cosy, vibrant café with a relaxed vibe. Good for breakfast and brunch with egg-free and dairy-free choices available. Popular among travellers for their fresh juices.</div>
+    <div class="food-note">📍 Kuah town area, Langkawi</div>
+    <a class="food-map-btn" href="https://www.google.com/maps/search/Yellow+Cafe+Langkawi" target="_blank">
+      <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      Open in Google Maps
+    </a>
+  </div>
+
+  <div class="food-category-label">🏪 Convenience Stores &amp; Supermarkets</div>
+
+  <div class="store-grid">
+    <a class="store-item" href="https://www.google.com/maps/search/KK+Super+Mart+Pantai+Cenang+Langkawi" target="_blank">
+      <div class="store-icon-name"><span class="store-emoji">🏪</span><span class="store-name">KK Super Mart</span></div>
+      <div class="store-type">Convenience Store · 24hr</div>
+      <div class="store-note">Pantai Cenang — closest to your stay</div>
+      <div class="store-map-link"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> View on Maps</div>
+    </a>
+    <a class="store-item" href="https://www.google.com/maps/search/7-Eleven+Pantai+Cenang+Langkawi" target="_blank">
+      <div class="store-icon-name"><span class="store-emoji">🏪</span><span class="store-name">7-Eleven</span></div>
+      <div class="store-type">Convenience Store · 24hr</div>
+      <div class="store-note">Pantai Cenang strip</div>
+      <div class="store-map-link"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> View on Maps</div>
+    </a>
+    <a class="store-item" href="https://www.google.com/maps/search/AEON+Big+Langkawi" target="_blank">
+      <div class="store-icon-name"><span class="store-emoji">🏬</span><span class="store-name">AEON Big</span></div>
+      <div class="store-type">Hypermarket</div>
+      <div class="store-note">Kuah — largest supermarket on island</div>
+      <div class="store-map-link"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> View on Maps</div>
+    </a>
+    <a class="store-item" href="https://www.google.com/maps/search/Giant+Hypermarket+Langkawi+Kuah" target="_blank">
+      <div class="store-icon-name"><span class="store-emoji">🏬</span><span class="store-name">Giant</span></div>
+      <div class="store-type">Hypermarket</div>
+      <div class="store-note">Kuah town — good prices on basics</div>
+      <div class="store-map-link"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> View on Maps</div>
+    </a>
+    <a class="store-item" href="https://www.google.com/maps/search/Mydin+Hypermarket+Langkawi" target="_blank">
+      <div class="store-icon-name"><span class="store-emoji">🏬</span><span class="store-name">Mydin</span></div>
+      <div class="store-type">Hypermarket</div>
+      <div class="store-note">Kuah — very affordable &amp; local</div>
+      <div class="store-map-link"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> View on Maps</div>
+    </a>
+    <a class="store-item" href="https://www.google.com/maps/search/Parkson+Langkawi+Parade+Mall" target="_blank">
+      <div class="store-icon-name"><span class="store-emoji">🛒</span><span class="store-name">Parkson</span></div>
+      <div class="store-type">Department Store</div>
+      <div class="store-note">Langkawi Parade Mall, Kuah</div>
+      <div class="store-map-link"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> View on Maps</div>
+    </a>
   </div>
 
 </div>
